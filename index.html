@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sw" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia ni Funguo ya Kumbukumbu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700&family=Fira+Code&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slateCustom: '#64748b',
+                        deepBlue: '#0f172a',
+                        softWhite: '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        .font-mono { font-family: 'Fira Code', monospace; }
+        
+        body { transition: background-color 0.3s, color 0.3s; }
+        .progress-bar { height: 4px; background: #3b82f6; width: 0%; position: fixed; top: 0; left: 0; z-index: 100; transition: width 0.2s; }
+        
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); }
+        .dark .glass { background: rgba(15, 23, 42, 0.8); }
+
+        .hidden-content { display: none; }
+    </style>
+</head>
+<body id="mainBody" class="font-sans bg-softWhite text-slate-800 dark:bg-deepBlue dark:text-slate-200">
+
+    <div class="progress-bar" id="progressBar"></div>
+
+    <nav class="sticky top-0 z-50 glass border-b border-slate-200 dark:border-slate-700 py-3 px-4 shadow-sm">
+        <div class="max-w-5xl mx-auto flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <select onchange="updateFont(this.value)" class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-xs sm:text-sm focus:outline-none">
+                    <option value="font-sans">Sans-Serif</option>
+                    <option value="font-serif">Serif</option>
+                    <option value="font-mono">Monospace</option>
+                </select>
+                <div class="flex items-center bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded">
+                    <button onclick="changeSize(-2)" class="px-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-700">A-</button>
+                    <button onclick="changeSize(2)" class="px-3 py-1 hover:bg-slate-100 dark:hover:bg-slate-700 border-l border-slate-300 dark:border-slate-600">A+</button>
+                </div>
+            </div>
+
+            <button onclick="toggleDarkMode()" class="p-2 rounded-lg bg-slate-200 dark:bg-slate-800 transition-transform active:scale-95">
+                <span id="themeIcon">🌙</span>
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative w-full h-[60vh] flex items-center justify-center text-center px-4 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&q=80&w=1200" alt="History background" class="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-20">
+        <div class="relative z-10 max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-bold font-serif mb-6 leading-tight">Historia: Funguo Muhimu ya Kulinda Kumbukumbu na Maono ya Maisha</h1>
+            <div class="flex items-center justify-center space-x-4 text-sm font-medium text-slate-500 dark:text-slate-400">
+                <span>Pastor Aloyce</span>
+                <span>•</span>
+                <span>Jumapili 19 Aprili 2026</span>
+            </div>
+        </div>
+    </header>
+
+    <main id="articleContent" class="max-w-3xl mx-auto px-6 py-12 text-lg leading-relaxed space-y-8">
+        <p class="first-letter:text-5xl first-letter:font-bold first-letter:text-blue-600 first-letter:mr-3 first-letter:float-left">
+            Katika safari ya maisha, mwanadamu anakabiliwa na adui mmoja wa asili ambaye mara nyingi hupuuza madhara yake: Usahaulifu. Kuna sababu nyingi za kweli zinazoeleza kwa nini tunasahau mambo muhimu, lakini ni lazima kupambana na hali hiyo kwa makusudi. Moja ya silaha kuu na "funguo" muhimu ya kutusaidia kukumbuka na kudumisha mwelekeo wetu ni kujifunza historia.
+        </p>
+
+        <h2 class="text-3xl font-bold font-serif text-blue-600 dark:text-blue-400 mt-12">Somo Kutoka kwa Musa na Waisraeli</h2>
+        <p>
+            Tunajifunza kupitia maandiko jinsi Waisraeli walivyojiandaa kuingia nchi ya ahadi. Mungu alijua kuwa, katikati ya neema na mafanikio, wanadamu wana mwelekeo wa kusahau misingi na mafunzo muhimu waliyopata wakati wa magumu. Ili kuzuia hili, Musa hakuishia tu kuwapa sheria, bali alichukua muda kuwasimulia na kuwaandikia historia ya safari yao.
+        </p>
+        
+        <blockquote class="border-l-4 border-blue-600 pl-6 py-2 italic bg-blue-50 dark:bg-blue-900/20 rounded-r-lg">
+            "Historia haipo kwa ajili ya kutuacha huko nyuma, bali ipo ili 'itukumbushe kutokusahau.' Inatupa muktadha wa tulipotoka ili tusiipoteze thamani ya mahali tulipo sasa."
+        </blockquote>
+
+        <h2 class="text-3xl font-bold font-serif text-blue-600 dark:text-blue-400 mt-12">Gharama ya Kupuuza Historia: Mfano wa Farao</h2>
+        <p>
+            Athari za kutojua historia zinajidhihirisha wazi kupitia kisa cha Farao wa Misri (Kutoka 1:8). Maandiko yanasema, <strong>"Basi akainuka mfalme mpya kutawala Misri, asiyemjua Yusufu."</strong>
+        </p>
+        <p>
+            Kutojua huku kwa Farao hakuwa tu kukosa taarifa, bali kulikuwa ni "usahaulifu uliomgharimu." Kwa sababu hakusoma au kujali historia ya nchi yake na mchango mkubwa wa Yusufu, Farao alishindwa kuwa na shukrani. Matokeo yake:
+        </p>
+        <ul class="list-disc pl-8 space-y-3 marker:text-blue-600">
+            <li><strong>Uonevu:</strong> Alianza kuwatesa watu (Waisraeli) ambao walikuwa baraka kwa taifa lake.</li>
+            <li><strong>Uharibifu wa Taifa:</strong> Usahaulifu wake ulisababisha Mungu kuushusha na kuufuta uchumi wa Misri, kuharibu miundombinu, maji, mifugo, na mimea yao.</li>
+        </ul>
+        <p>
+            Hii inatufundisha kuwa, kiongozi au mtu yeyote asiyeijua historia ya misingi iliyomjenga, yuko hatarini kubomoa kile kilichojengwa kwa gharama kubwa.
+        </p>
+
+        <h2 class="text-3xl font-bold font-serif text-blue-600 dark:text-blue-400 mt-12">Jinsi ya Kuimarisha Kumbukumbu Yako</h2>
+        <p>
+            Ili tusiingie katika mtego wa Farao, ni lazima tuwe na utamaduni wa kujifunza kwa bidii. Historia ni mwalimu mkuu. Mapendekezo yangu kwako ni haya:
+        </p>
+        <div class="grid gap-6 sm:grid-cols-2">
+            <div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-xl hover:shadow-md transition">
+                <h3 class="font-bold mb-2">1. Soma Vitabu vya Historia</h3>
+                <p class="text-sm">Usikubali kupitwa na matukio yaliyotengeneza jamii yako na imani yako.</p>
+            </div>
+            <div class="p-6 bg-slate-100 dark:bg-slate-800 rounded-xl hover:shadow-md transition">
+                <h3 class="font-bold mb-2">2. Chunguza Wasifu wa Watu</h3>
+                <p class="text-sm">Kupitia wasifu wa waliofanikiwa kabla yetu, tunapata mafunzo makuu ya maisha.</p>
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-bold font-serif text-blue-600 dark:text-blue-400 mt-12">Hitimisho</h2>
+        <p>
+            Historia ni kioo cha wakati uliopita kinachomulika njia ya wakati ujao. Unapochagua kujifunza historia, unachagua kulinda baraka zako na kuepuka makosa yaliyogharimu vizazi vilivyopita. Anza leo; soma historia, kumbuka ulikotoka, na utajenga kesho yenye imara.
+        </p>
+    </main>
+
+    <section class="max-w-4xl mx-auto px-6 py-20 bg-slate-50 dark:bg-slate-900/50 rounded-3xl mb-20">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold font-serif mb-4">Jipime Uelewa</h2>
+            <p class="text-slate-500">Pima uelewa wako wa funguo ya kwanza kabla ya kuziendea funguo zingine.</p>
+        </div>
+
+        <div id="quizContainer" class="space-y-12">
+            <div class="quiz-item" id="q1">
+                <p class="text-xl font-semibold mb-4">1. Ni nani adui wa asili wa mwanadamu anayetajwa katika makala?</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <button onclick="checkAns(1, 'A', 'Usahaulifu')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">A. Umaskini</button>
+                    <button onclick="checkAns(1, 'B', 'Usahaulifu')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">B. Usahaulifu</button>
+                </div>
+            </div>
+
+            <div class="quiz-item hidden-content" id="q2">
+                <p class="text-xl font-semibold mb-4">2. Kwa nini Musa aliandika na kusimulia historia ya Waisraeli?</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <button onclick="checkAns(2, 'A', 'Kukumbusha kutokusahau')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">A. Ili kuwatisha</button>
+                    <button onclick="checkAns(2, 'B', 'Kukumbusha kutokusahau')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">B. Ili itukumbushe kutokusahau</button>
+                </div>
+            </div>
+
+            <div class="quiz-item hidden-content" id="q3">
+                <p class="text-xl font-semibold mb-4">3. Ni nini kilisababisha Farao mpya kuanza kuwatesa Waisraeli?</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <button onclick="checkAns(3, 'A', 'Hakumjua Yusufu')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">A. Hakumjua Yusufu (Kutojua Historia)</button>
+                    <button onclick="checkAns(3, 'B', 'Hakumjua Yusufu')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">B. Waisraeli walikuwa wakaidi</button>
+                </div>
+            </div>
+
+            <div class="quiz-item hidden-content" id="q4">
+                <p class="text-xl font-semibold mb-4">4. Moja ya athari za Farao kupuuza historia ilikuwa nini?</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <button onclick="checkAns(4, 'A', 'Uharibifu wa uchumi')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">A. Kuongezeka kwa utajiri</button>
+                    <button onclick="checkAns(4, 'B', 'Uharibifu wa uchumi')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">B. Uharibifu wa uchumi na taifa la Misri</button>
+                </div>
+            </div>
+
+            <div class="quiz-item hidden-content" id="q5">
+                <p class="text-xl font-semibold mb-4">5. Kulingana na hitimisho, Historia inafananishwa na nini?</p>
+                <div class="grid gap-3 sm:grid-cols-2">
+                    <button onclick="checkAns(5, 'A', 'Kioo')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">A. Kioo cha wakati uliopita</button>
+                    <button onclick="checkAns(5, 'B', 'Kioo')" class="opt-btn p-4 border rounded-lg hover:bg-blue-600 hover:text-white transition text-left">B. Ukuta wa kuzuia maendeleo</button>
+                </div>
+            </div>
+
+            <div id="finalScore" class="hidden-content text-center p-8 border-2 border-dashed border-blue-600 rounded-2xl">
+                <h3 class="text-3xl font-bold mb-2">Matokeo ya Nidhamu</h3>
+                <p id="scorePercent" class="text-5xl font-black text-blue-600 mb-4">0%</p>
+                <p id="scoreMsg" class="text-lg italic"></p>
+                <div class="mt-6 flex justify-center gap-4">
+                    <button onclick="location.reload()" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">Rudia Tena</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-10 border-t border-slate-200 dark:border-slate-800 text-slate-500 text-sm">
+        <p>© 2026 Disciples Community Church Kisesa Mwanza, 0757 344 860</p>
+    </footer>
+
+    <script>
+        // Progress Bar logic
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
+        });
+
+        // Dark Mode
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const icon = document.getElementById('themeIcon');
+            icon.innerText = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+        }
+
+        // Font Controls
+        function updateFont(fontClass) {
+            const body = document.getElementById('mainBody');
+            body.classList.remove('font-sans', 'font-serif', 'font-mono');
+            body.classList.add(fontClass);
+        }
+
+        let currentSize = 18;
+        function changeSize(delta) {
+            currentSize += delta;
+            if (currentSize < 14) currentSize = 14;
+            if (currentSize > 30) currentSize = 30;
+            document.getElementById('articleContent').style.fontSize = currentSize + 'px';
+        }
+
+        // Quiz Logic
+        let correctAnswers = 0;
+        let answeredQuestions = 0;
+        const totalQuestions = 5;
+        const keys = {
+            1: 'B', 2: 'B', 3: 'A', 4: 'B', 5: 'A'
+        };
+
+        function checkAns(qNum, choice, correctText) {
+            answeredQuestions++;
+            const item = document.getElementById('q' + qNum);
+            const buttons = item.querySelectorAll('button');
+            
+            // Disable all buttons in this question
+            buttons.forEach(btn => btn.disabled = true);
+
+            // Create result feedback
+            const feedback = document.createElement('div');
+            feedback.className = 'mt-4 p-4 rounded bg-slate-100 dark:bg-slate-800 animate-pulse';
+            
+            if (choice === keys[qNum]) {
+                correctAnswers++;
+                feedback.innerHTML = `<span class="text-green-600 font-bold">✓ Safi!</span> Jibu ni sahihi.`;
+            } else {
+                feedback.innerHTML = `<span class="text-red-600 font-bold">✗ Hapana!</span> Jibu sahihi lilikuwa: <strong>${correctText}</strong>`;
+            }
+
+            // Show answer button (as requested)
+            const showBtn = document.createElement('button');
+            showBtn.innerText = "Soma Ufafanuzi";
+            showBtn.className = "mt-2 text-xs text-blue-500 underline block";
+            showBtn.onclick = () => alert("Historia inatusaidia kutofanya makosa ya zamani.");
+            feedback.appendChild(showBtn);
+
+            item.appendChild(feedback);
+
+            // Disciplined progression: Show next question or final score
+            setTimeout(() => {
+                if (qNum < totalQuestions) {
+                    const nextQ = document.getElementById('q' + (qNum + 1));
+                    nextQ.classList.remove('hidden-content');
+                    nextQ.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    showFinalResult();
+                }
+            }, 1000);
+        }
+
+        function showFinalResult() {
+            const scoreArea = document.getElementById('finalScore');
+            const percent = Math.round((correctAnswers / totalQuestions) * 100);
+            document.getElementById('scorePercent').innerText = percent + "%";
+            
+            let msg = "";
+            if (percent === 100) msg = "Hongera! Wewe ni mwalimu wa historia!";
+            else if (percent >= 60) msg = "Vizuri! Una kumbukumbu imara.";
+            else msg = "Inabidi usome makala hii tena kwa umakini.";
+
+            document.getElementById('scoreMsg').innerText = msg;
+            scoreArea.classList.remove('hidden-content');
+            scoreArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
